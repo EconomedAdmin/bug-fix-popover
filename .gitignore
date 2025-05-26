@@ -34,6 +34,6 @@ replay_pid*
 .DS_Store
 
 # The following files are generated/updated by vaadin-maven-plugin
-node_modules/
+**/node_modules/
 src/main/frontend/generated/
 vite.generated.ts

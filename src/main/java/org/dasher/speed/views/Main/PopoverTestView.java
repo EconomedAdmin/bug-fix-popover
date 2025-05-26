@@ -27,15 +27,6 @@ public class PopoverTestView extends Main {
 	private final Grid<TestItem> testGrid;
 	
 	
-	private class MySpan extends Span {
-		
-		public MySpan( String text ) {
-			super( text );
-			getStyle().setMaxWidth( "800px" );
-			getStyle().setMarginBottom( "1rem" );
-		}
-		
-	}
 	
 	public PopoverTestView() {
 		add( new H2( RouteConfig.ISSUE_NAME ) );
@@ -130,7 +121,7 @@ public class PopoverTestView extends Main {
 		} ) );
 		
 		testGrid.getColumnByKey( "price" )
-		.setTooltipGenerator( item -> item.getDescription() );
+		.setTooltipGenerator( TestItem::getDescription );
 		
 		testGrid.setColumnOrder( testGrid.getColumnByKey( "name" ), testGrid.getColumnByKey( "price" ), testGrid.getColumnByKey( "quantity" ), testGrid.getColumnByKey( "available" ),
 		testGrid.getColumnByKey( "date" ), testGrid.getColumnByKey( "description" ) );
